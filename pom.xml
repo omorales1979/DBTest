@@ -13,8 +13,8 @@
         <port>4516</port>
         <server>deployit-unix</server>
         <project.build.directory>${project.basedir}/target</project.build.directory>
-        <environementId>myenv</environementId>
-        <artifactId>DbTest1</artifactId>
+        <environementId>Environments/DataBase/DBTest</environementId>
+        <artifactId>DBTest</artifactId>
         <applicationName>MyDB</applicationName>
         <deletePreviouslyDeployedDar>false</deletePreviouslyDeployedDar>
         <generateDeployedOnUpgrade>true</generateDeployedOnUpgrade>
@@ -27,9 +27,9 @@
 <pluginManagement>
     <plugins>
         <plugin>
-            <groupId>com.xebialabs.xldeploy</groupId>
-            <artifactId>xldeploy-maven-plugin</artifactId>
-            <version>6.0.0</version>
+            <groupId>com.xebialabs.deployit</groupId>
+            <artifactId>maven-deployit-plugin</artifactId>
+            <version>4.5.4</version>
             <extensions>true</extensions>
             <executions></executions>
             <configuration>
