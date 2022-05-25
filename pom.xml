@@ -6,7 +6,7 @@
     <groupId>DbTest</groupId>
     <artifactId>DbTest</artifactId>
     <packaging>war</packaging>
-    <version>DbTest_{Version}</version>
+    <version>DbTest</version>
     <properties>
         <serverAddress>http://localhost:4516/</serverAddress>
         <secured>true</secured>
@@ -20,6 +20,7 @@
         <generateDeployedOnUpgrade>true</generateDeployedOnUpgrade>
         <cancelTaskError>false</cancelTaskError>
         <orchestator>group-based</orchestator>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
     </properties>
 <dependencies></dependencies>
     <build>
@@ -43,6 +44,7 @@
                 <generateDeployedOnUpgrade>${generateDeployedOnUpgrade}</generateDeployedOnUpgrade>
                 <cancelTaskError>${cancelTaskError}</cancelTaskError>
                 <orchestator>${orchestator}</orchestator>
+                <failOnMissingWebXml>false</failOnMissingWebXml>
                 <deployables>
                     <deployable>
                         <name>DBTest</name>
