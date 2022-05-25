@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>DbTest</groupId>
+    <artifactId>DbTest</artifactId>
+    <packaging>war</packaging>
+    <version>DbTest_{Version}</version>
+    <properties>
+        <serverAddress>http://localhost:4516/</serverAddress>
+        <secured>true</secured>
+        <port>4516</port>
+        <server>deployit-unix</server>
+        <project.build.directory>${project.basedir}/target</project.build.directory>
+        <environementId>myenv</environementId>
+        <artifactId>DbTest1</artifactId>
+        <applicationName>MyDB</applicationName>
+        <deletePreviouslyDeployedDar>false</deletePreviouslyDeployedDar>
+        <generateDeployedOnUpgrade>true</generateDeployedOnUpgrade>
+        <cancelTaskError>false</cancelTaskError>
+        <orchestator>group-based</orchestator>
+    </properties>
+<dependencies></dependencies>
+    <build>
+<pluginManagement>
+    <plugins>
+        <plugin>
+            <groupId>com.xebialabs.xldeploy</groupId>
+            <artifactId>xldeploy-maven-plugin</artifactId>
+            <version>6.0.0</version>
+            <extensions>true</extensions>
+            <executions></executions>
+            <configuration>
+                <serverAddress>${serverAddress}</serverAddress>
+                <secured>${secured}</secured>
+                <port>${port}</port>
+                <server>${server}</server>
+                <environementId>${environementId}</environementId>
+                <artifactId>${artifactId}</artifactId>
+                <applicationName>${applicationName}</applicationName>
+                <deletePreviouslyDeployedDar>${deletePreviouslyDeployedDar}</deletePreviouslyDeployedDar>
+                <generateDeployedOnUpgrade>${generateDeployedOnUpgrade}</generateDeployedOnUpgrade>
+                <cancelTaskError>${cancelTaskError}</cancelTaskError>
+                <orchestator>${orchestator}</orchestator>
+                <deployables>
+                    <deployable>
+                        <name>DBTest</name>
+                        <type>sql.sqlScripts</type>
+                        <groupId>${project.groupId}</groupId>
+                        <artifactId>${project.artifactId}</artifactId>
+                        <location>${project.basedir}</location>
+                        <localBackup>false</localBackup>
+                        <executeModifiedScripts>true</executeModifiedScripts>
+                        <executeRollbackModifiedScripts>true</executeRollbackModifiedScripts>
+                        <tags>
+                            <tag>dbtest</tag>
+                        </tags>
+                    </deployable>
+                </deployables>
+            </configuration>
+        </plugin>
+    </plugins>
+</pluginManagement>
+    </build>
+</project>
